@@ -10,7 +10,7 @@ with open('requirements.txt') as inf:
 
 
 setup(
-    name='eleanor-twitter',
+    name='eleanor-client',
     version='0.1',
     description='Package for interacting with eleanor service',
     author='Brett Smythe',

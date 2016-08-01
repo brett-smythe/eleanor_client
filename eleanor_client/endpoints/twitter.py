@@ -32,7 +32,7 @@ def add_tweet_data(tweet):
     formatted correctly for the request)"""
     req_url = '{0}{1}'.format(eleanor_url, 'add-tweet-data')
     headers = {'content-type': 'application/json'}
-    payload = json.dumps({tweet})
+    payload = json.dumps(tweet)
     requests.post(req_url, headers=headers, data=payload)
 
 

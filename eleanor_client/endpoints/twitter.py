@@ -78,7 +78,7 @@ def tweet_search_on_date(username, date, search_term):
         'search_term': search_term
     }
     payload = json.dumps(search_data)
-    response = requests.get(req_url, headers=headers, data=payload)
+    response = requests.post(req_url, headers=headers, data=payload)
     if response.status_code == 204:
         return None
     else:

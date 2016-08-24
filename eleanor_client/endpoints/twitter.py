@@ -1,5 +1,6 @@
 """Utility for interacting with eleanor's twitter related endpoints"""
 import json
+from datetime import datetime
 
 import requests
 
@@ -60,3 +61,25 @@ def get_username_last_tweet_id(username):
         return None
     else:
         return response.json()['last_tweet_id']
+
+
+def tweet_search_on_date(username, date, search_term):
+    """When given the above search parameters pull tweet search data
+    this returns the count of tweets by username on date that includes
+    search_term
+    """
+    req_url = '{0}{1}'.format(eleanor_url, 'stats/tweets-on-date')
+    headers = {'content-type': 'application/json'}
+    if isinstance(date, datetime):
+        date = date.strftime("%Y-%m-%d")
+    search_data = {
+        'twitter_username': username,
+        'search_date': date,
+        'search_term': search_term
+    }
+    payload = json.dumps(search_data)
+    response = requests.get(req_url, headers=headers, data=payload)
+    if response.status == 204:
+        return None
+    else:
+        return response.json()

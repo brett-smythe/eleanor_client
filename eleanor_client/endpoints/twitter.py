@@ -11,10 +11,12 @@ eleanor_url = 'http://{0}:{1}/'.format(
     settings.eleanor_url, settings.eleanor_port
 )
 
+tl_users_endpoint = 'twitter-tl-users'
+
 
 def get_tracked_twitter_users():
     """Get all currently tracked twitter users"""
-    req_url = '{0}{1}'.format(eleanor_url, 'twitter-tl-users')
+    req_url = '{0}{1}'.format(eleanor_url, tl_users_endpoint)
     response = requests.get(req_url)
     tracked_users = response.json()['twitter_usernames']
     return tracked_users
@@ -22,7 +24,7 @@ def get_tracked_twitter_users():
 
 def track_new_twitter_user(username):
     """Track a new twitter user in eleanor"""
-    req_url = '{0}{1}'.format(eleanor_url, 'twitter-tl-users')
+    req_url = '{0}{1}'.format(eleanor_url, tl_users_endpoint)
     headers = {'content-type': 'application/json'}
     payload = json.dumps({'twitter_usernames': [username]})
     requests.post(req_url, headers=headers, data=payload)

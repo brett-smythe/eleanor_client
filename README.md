@@ -21,6 +21,7 @@ from eleanor_client.endpoints import twitter
 get_tracked_twitter_users()
 >['twitter_uname_1', 'twitter_uname_2']
 
+# This adds a username to eleanor's list of tracked twitter users
 track_new_twitter_user('new_username_to_track')
 >
 

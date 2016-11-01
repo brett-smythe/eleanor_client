@@ -18,9 +18,12 @@ def get_tracked_twitter_users():
     """Get all currently tracked twitter users"""
     req_url = '{0}{1}'.format(eleanor_url, tl_users_endpoint)
     response = requests.get(req_url)
+    try:
     if 'twitter_usernames' in response.json():
         tracked_users = response.json()['twitter_usernames']
     else:
+        tracked_users = []
+    except ValueError:
         tracked_users = []
     return tracked_users
 

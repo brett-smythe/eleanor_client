@@ -11,7 +11,7 @@ with open('requirements.txt') as inf:
 
 setup(
     name='eleanor-client',
-    version='0.3.8',
+    version='0.3.9',
     description='Package for interacting with eleanor service',
     author='Brett Smythe',
     author_email='smythebrett@gmail.com',

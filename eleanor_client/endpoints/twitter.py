@@ -11,7 +11,7 @@ eleanor_url = 'http://{0}:{1}/'.format(
     settings.eleanor_url, settings.eleanor_port
 )
 
-tl_users_endpoint = 'twitter-users'
+tl_users_endpoint = 'twitter-tl-users'
 
 
 def get_tracked_twitter_users():

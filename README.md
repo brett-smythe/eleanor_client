@@ -2,6 +2,8 @@
 
 Client for interacting with [Eleanor](https://github.com/brett-smythe/eleanor) service.
 
+To see how this fits in with the other repos please see [Aquatic Services Wiki](https://github.com/brett-smythe/ansible_configs/wiki)
+
 ## Install
 Recommended to install and run in a virtualenv
 The values in eleanor_client/settings/settings.py need to be set for your instance of eleanor
